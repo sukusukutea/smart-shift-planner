@@ -56,7 +56,7 @@
     - 遅番：可or不可
     - 夜勤：可or不可
   - 勤務形態の登録
-    - デフォルト：日勤・早番・遅番・夜勤
+    - デフォルト：日勤・早番・遅番・夜勤(基本「入明休のセット」)
   - 専門職毎の必要人数の設定（日毎）
   - 休日希望の設定
 - シフト作成後の機能
@@ -72,6 +72,7 @@
   - 看護の常勤換算基準設定（例：2.5人/日）
   - 日勤の連続上限
   - 夜勤の連続上限
+  - 夜勤後の休日日数
   - 連続日勤後の休日日数
   - 連続夜勤後の休日日数
 - 条件未達アラートの拡張
@@ -84,6 +85,9 @@
 - UI/UXの向上
 - AI提案（履歴学習）
 
+## 画面遷移図
+参考Figma：https://www.figma.com/design/r1Jvlus70r5jMBNco6odXf/smart-shift-planner%E3%80%80%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=ZQ7qy500AxCeb9Dr-1
+
 ## 使用する技術スタック
 - 使用するフレームワーク：Ruby on Rails 7.1.x
 - データベース：PostgreSQL
@@ -94,8 +98,8 @@
    - 認可制御： gem 'pundit'
    - パスワード暗号化: gem 'bcrypt'
  - UI/UX用  
-   - gem 'bootstrap'
-   - 手動修正時にリアルタイムで更新
+   - スタイルフレームワーク： Tailwind CSS（gem 'tailwindcss-rails'）
+   - 非同期通信・動的更新
      - gem 'turbo-rails'(Rails7に標準装備)
      - gem 'stimulus-rails'(Rails7に標準装備) 
  - シフト作成用
