@@ -16,5 +16,4 @@ test:
   database: smart_shift_planner_test
 
 production:
-  <<: *default
-  database: smart_shift_planner_production
+  url: <%= ENV["DATABASE_URL"] %>
