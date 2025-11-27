@@ -15,6 +15,9 @@ RUN gem install bundler && bundle install
 
 COPY . .
 
+# 本番用のアセットプリコンパイル
+RUN RAILS_ENV=production bundle exec rails assets:precompile
+
 EXPOSE 3000
 
 CMD ["bash", "-c", "bundle exec rails server -b 0.0.0.0 -p 3000"]
